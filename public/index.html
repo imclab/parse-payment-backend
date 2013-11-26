@@ -1,9 +1,41 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
 
-<html>
-  <head>
-    <title>My ParseApp site</title>
-  </head>
-  <body>
-    Hello World!
-  </body>
+  <title>My Parse App</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+</head>
+
+<body>
+  <h1>You're ready to use Parse!</h1>
+  <script type="text/javascript">
+    Parse.initialize("3N3ZSRkxdiQgnP5LhzW17Tj3g0hxFRMfHAQ29cXT", "cY8kONpEW2TS7ylxAY4zZZo7F6yubDZbrDaTQtBS");
+    
+    Parse.User.logIn("connor", "connor", {
+      success: function(user) {
+        console.log('Coins',user.get('coins'));
+        console.log('Lives',user.get('lives'));
+        console.log('Bombs',user.get('bombs'));
+        user.save({coins:0}).then(function(user) {
+          console.log('New Coins',user.get('coins'));
+        },function(error){
+          console.error(error);
+        });
+        user.save({coins:0}).then(function(user) {
+          console.log('New Coins',user.get('coins'));
+        },function(error){
+          console.error(error);
+        });
+      },
+      error: function(user, error) {
+        console.error(error);
+      }
+    });
+  </script>
+</body>
 </html>
