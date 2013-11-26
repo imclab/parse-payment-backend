@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "ParsePaymentBackend": {
+            "applicationId": "3N3ZSRkxdiQgnP5LhzW17Tj3g0hxFRMfHAQ29cXT", 
+            "masterKey": "UWldzesvgdlpbBkOdQAhpKsZVTusjfFkmjs2ATcq"
+        }, 
+        "_default": {
+            "link": "ParsePaymentBackend"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.13"
+    }
+}
